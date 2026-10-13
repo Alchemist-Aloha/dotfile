@@ -4,6 +4,7 @@ hl.config({
     },
     scrolling = {
         column_width = 0.67,
+        explicit_column_widths = "0.333, 0.5, 0.667, 1.0",
         focus_fit_method = 1,
         follow_min_visible = 0.25,
     },

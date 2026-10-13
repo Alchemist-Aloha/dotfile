@@ -38,7 +38,7 @@ Back up your current files before copying. Apply the configs in small groups, th
 
 The monitor example uses two 1920×1080 outputs side by side: `DP-1` at 144 Hz and `DP-2` at 165 Hz. Workspaces 1–2 are assigned to the first output and 4–5 to the second. Change `MONITOR1`, `MONITOR2`, the modes, positions, and workspace rules to match your hardware before enabling this configuration.
 
-The selected layout is Hyprland's scrolling layout. Its settings are in `config/hypr/config/misc.lua`: `column_width = 0.67`, `focus_fit_method = 1`, and `follow_min_visible = 0.25`. The rest of the Hyprland config is split across `config/hypr/config/` for bindings, scratchpads, rules, input, appearance, workspaces, and startup.
+The selected layout is Hyprland's scrolling layout. Its settings are in `config/hypr/config/misc.lua`: the default column width is `0.67`, the configured resize presets are `0.333`, `0.5`, `0.667`, and `1.0`, `focus_fit_method = 1`, and `follow_min_visible = 0.25`. Super+J and Super+K step the active column down or up through those preset widths.
 
 ## Hyprland Key bindings
 
@@ -71,7 +71,8 @@ Yazi, Thunderbird, and Dolphin use tiled windows in their special workspaces. bt
 | Super+Alt+Space | Toggle floating mode |
 | Super+D | Toggle maximize-style fullscreen (`mode = 1`) |
 | Super+F | Toggle fullscreen |
-| Super+J | Toggle split layout |
+| Super+J | Shrink the active scrolling column to the previous preset width |
+| Super+K | Grow the active scrolling column to the next preset width |
 | Super+Arrow keys | Focus the neighboring window |
 | Super+Shift+Arrow keys | Move the active window in that direction |
 | Alt+Tab | Open Noctalia's window switcher |
