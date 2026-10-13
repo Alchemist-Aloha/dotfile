@@ -4,9 +4,7 @@ This setup is built around three parts: Hyprland manages scrolling windows and k
 
 Hyprland has no ordinary minimize/hide action for a window, so these configs use named special workspaces as scratchpads. A shortcut launches an app the first time, then shows or hides its special workspace on later presses. Hiding leaves the app running; it does not close the window or its process. The scratchpad rules cover Dolphin, Thunderbird, Yazi, btop, and GNOME Calculator.
 
-This repository is a sanitized set of my configuration files for a Hyprland workstation. It is a starting point for another machine, not a drop-in installer: back up your current settings and adjust monitor names, display modes, application commands, and paths before copying files into `~/.config` or your home directory.
-
-No install script or symlink manager is included. Files under `config/` mirror `~/.config/`; dotfiles at the repository root belong in `~/`. The repository omits runtime state, browser profiles, shell history, credentials, and machine-specific identity. Some settings use generic placeholders such as `$HOME`, `USERNAME`, or `GITHUB_OWNER`; replace them with values that make sense on your system.
+This repository is a sanitized set of my configuration files for a Hyprland workstation. It is a starting point for another machine, not a drop-in installer: back up your current settings and adjust monitor names, display modes, application commands, and paths before copying files into `~/.config` or your home directory. Some settings use generic placeholders such as `$HOME`, `USERNAME`, or `GITHUB_OWNER`; replace them with values that make sense on your system.
 
 ## Default applications
 
@@ -26,7 +24,7 @@ Fish separately sets `EDITOR=fresh`, so terminal tools that honor `$EDITOR` use 
 
 This repository currently includes configuration for Hyprland, Noctalia, Fish, Starship, Ghostty, mpv, and Yazi. Yazi includes the Noctalia flavor and the Mediainfo, Ouch, Chmod, and Smart Filter plugins. Its opener choices include Gwenview, GIMP, Satty, Inkscape, Okular, Ark, LibreOffice, and other desktop applications; these are launch commands, not bundled application settings.
 
-Noctalia provides the bar, launcher, control center, notifications, media and volume controls, brightness controls, clipboard, screenshots, and session actions. Its bar configuration includes a clock, active-window title, media, network, volume, tray, notifications, GPU temperature, and RAM widgets.
+This configuration requires Noctalia Shell 5 or later. Noctalia provides the bar, launcher, control center, notifications, media and volume controls, brightness controls, clipboard, screenshots, and session actions. Its bar configuration includes a clock, active-window title, media, network, volume, tray, notifications, GPU temperature, and RAM widgets.
 
 ## Fish shell and portability notes
 
