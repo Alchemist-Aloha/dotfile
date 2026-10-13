@@ -28,13 +28,21 @@ This repository currently includes configuration for Hyprland, Noctalia, Fish, S
 
 Noctalia provides the bar, launcher, control center, notifications, media and volume controls, brightness controls, clipboard, screenshots, and session actions. Its bar configuration includes a clock, active-window title, media, network, volume, tray, notifications, GPU temperature, and RAM widgets.
 
+## Fish shell and portability notes
+
+Fish adds `~/.local/bin` to `PATH`, uses Starship, zoxide, and eza, aliases `grep` to ripgrep, and adds verbose `mv`, `rm`, and `cp` abbreviations. Install these tools separately if you use the Fish config.
+
+Hyprland launches apps through `uwsm app --`. If you do not use UWSM, change `launchPrefix` in `config/hypr/config/binds.lua` and the launch strings in `config/hypr/config/scratchpads.lua`. Check that each referenced executable is installed. These configs do not install applications, plugins, or themes.
+
+Back up your current files before copying. Apply the configs in small groups, then reload Hyprland and validate Noctalia after each change.
+
 ## Hyprland layout and displays
 
 The monitor example uses two 1920×1080 outputs side by side: `DP-1` at 144 Hz and `DP-2` at 165 Hz. Workspaces 1–2 are assigned to the first output and 4–5 to the second. Change `MONITOR1`, `MONITOR2`, the modes, positions, and workspace rules to match your hardware before enabling this configuration.
 
 The selected layout is Hyprland's scrolling layout. Its settings are in `config/hypr/config/misc.lua`: `column_width = 0.67`, `focus_fit_method = 1`, and `follow_min_visible = 0.25`. The rest of the Hyprland config is split across `config/hypr/config/` for bindings, scratchpads, rules, input, appearance, workspaces, and startup.
 
-## Key bindings
+## Hyprland Key bindings
 
 `Super` means the Windows/Command key. These bindings are from `config/hypr/config/binds.lua`.
 
@@ -105,11 +113,3 @@ Yazi, Thunderbird, and Dolphin use tiled windows in their special workspaces. bt
 | XF86 volume keys | Change volume or mute through Noctalia |
 | XF86 media keys | Play/pause, next, and previous |
 | XF86 brightness keys | Change display brightness |
-
-## Shell and portability notes
-
-Fish adds `~/.local/bin` to `PATH`, uses Starship, zoxide, and eza, aliases `grep` to ripgrep, and adds verbose `mv`, `rm`, and `cp` abbreviations. Install these tools separately if you use the Fish config.
-
-Hyprland launches apps through `uwsm app --`. If you do not use UWSM, change `launchPrefix` in `config/hypr/config/binds.lua` and the launch strings in `config/hypr/config/scratchpads.lua`. Check that each referenced executable is installed. These configs do not install applications, plugins, or themes.
-
-Back up your current files before copying. Apply the configs in small groups, then reload Hyprland and validate Noctalia after each change.
