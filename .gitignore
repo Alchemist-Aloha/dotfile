@@ -1,0 +1,13 @@
+# Keep local credentials and machine-specific overrides out of version control.
+*.local
+*.secret
+*credentials*
+*token*
+*private*key*
+.env
+.env.*
+**/fish_variables
+**/history
+**/history_*
+**/*.bak
+**/*.bak-*

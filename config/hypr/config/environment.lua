@@ -1,0 +1,16 @@
+-- Environmental variables (for reference https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/)
+-- if you use UWSM, define your variables in ~/.config/uwsm/env
+-- if you don't use UWSM, define your variables here (e.g. hl.env("QT_QPA_PLATFORM", "wayland"))
+
+-- NVIDIA GPU (RTX 3070, nvidia-open-dkms)
+-- This session is UWSM-managed, so the variables are set in ~/.config/uwsm/env.
+-- Current upstream guidance (https://wiki.hypr.land/Nvidia/) is only:
+--
+-- hl.env("LIBVA_DRIVER_NAME", "nvidia")          -- VA-API hardware video decode
+-- hl.env("NVD_BACKEND", "direct")                -- required on driver >= 525
+-- hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")  -- GLVND GLX vendor pin
+-- hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto") -- native Wayland for Electron/CEF apps
+--
+-- Removed 2026-09-29 as obsolete workarounds (do not re-add):
+--   GBM_BACKEND=nvidia-drm  -- Mesa auto-selects the NVIDIA GBM backend now
+--   __GL_GSYNC_ALLOWED=1    -- X11/GLX-only variable; Wayland VRR is misc:vrr
