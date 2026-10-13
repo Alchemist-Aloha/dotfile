@@ -1,10 +1,10 @@
-# Linux dotfiles
+# Linux dotfiles for Hyprland+Noctalia+Fish
 
-This setup is built around three parts: Hyprland manages windows and keyboard shortcuts, Noctalia supplies the desktop shell and panels, and Fish is the interactive shell. The Hyprland config is written in Lua and assumes UWSM for launching applications.
+This setup is built around three parts: Hyprland manages scrolling windows and keyboard shortcuts, Noctalia supplies the desktop shell and panels, and Fish is the interactive shell. The Hyprland config is written in Lua and assumes UWSM for launching applications.
 
 Hyprland has no ordinary minimize/hide action for a window, so these configs use named special workspaces as scratchpads. A shortcut launches an app the first time, then shows or hides its special workspace on later presses. Hiding leaves the app running; it does not close the window or its process. The scratchpad rules cover Dolphin, Thunderbird, Yazi, btop, and GNOME Calculator.
 
-This repository is a sanitized set of desktop and shell configuration files for a Hyprland workstation. It is a starting point for another machine, not a drop-in installer: back up your current settings and adjust monitor names, display modes, application commands, and paths before copying files into `~/.config` or your home directory.
+This repository is a sanitized set of my configuration files for a Hyprland workstation. It is a starting point for another machine, not a drop-in installer: back up your current settings and adjust monitor names, display modes, application commands, and paths before copying files into `~/.config` or your home directory.
 
 No install script or symlink manager is included. Files under `config/` mirror `~/.config/`; dotfiles at the repository root belong in `~/`. The repository omits runtime state, browser profiles, shell history, credentials, and machine-specific identity. Some settings use generic placeholders such as `$HOME`, `USERNAME`, or `GITHUB_OWNER`; replace them with values that make sense on your system.
 
@@ -20,24 +20,13 @@ Hyprland's defaults in `config/hypr/config/variables.lua` are:
 | GUI editor | GNOME Text Editor |
 | Calculator | GNOME Calculator |
 
-Fish separately sets `EDITOR=fresh`, so terminal tools that honor `$EDITOR` use Fresh. Super+T is assigned to the Thunderbird scratchpad, not to the GUI editor.
+Fish separately sets `EDITOR=fresh`, so terminal tools that honor `$EDITOR` use Fresh.
 
-## Software configured here
+## Configuration included
 
-The configuration files and launch commands cover:
+This repository currently includes configuration for Hyprland, Noctalia, Fish, Starship, Ghostty, mpv, and Yazi. Yazi includes the Noctalia flavor and the Mediainfo, Ouch, Chmod, and Smart Filter plugins. Its opener choices include Gwenview, GIMP, Satty, Inkscape, Okular, Ark, LibreOffice, and other desktop applications; these are launch commands, not bundled application settings.
 
-- Hyprland, UWSM, and Noctalia
-- Fish, Bash, and Zsh; Starship prompt, eza, ripgrep, zoxide, uv, and fzf
-- Ghostty, Alacritty, Kitty, and Zellij
-- VS Code (`code`), Fresh, Vim, Nano, KWrite, and GNOME Text Editor
-- Yazi, btop, Thunderbird, Obsidian, GNOME Calculator, and Dolphin
-- Google Chrome, mpv with uosc, Fastfetch, and bat
-- Android SDK, Flutter, Pi Agent CLI, and the Antigravity CLI path setup in Fish
-- GTK 3/4, Qt 5/6, and Fontconfig theme settings
-
-Yazi has Mediainfo, Ouch, Chmod, and Smart Filter plugins configured. Its opener choices include Gwenview, GIMP, Satty, Inkscape, Okular, Ark, LibreOffice, and the applications above. These are configured commands; install the programs you need separately.
-
-Noctalia provides the bar, launcher, control center, notifications, media and volume controls, brightness controls, clipboard, screenshots, and session actions. The bar includes a clock, active-window title, media, network, volume, tray, notifications, GPU temperature, and RAM widgets. An AI-usage bar plugin is configured as an optional extension; Noctalia may warn that its widget type is unknown unless the plugin is installed and registered.
+Noctalia provides the bar, launcher, control center, notifications, media and volume controls, brightness controls, clipboard, screenshots, and session actions. Its bar configuration includes a clock, active-window title, media, network, volume, tray, notifications, GPU temperature, and RAM widgets.
 
 ## Hyprland layout and displays
 
@@ -103,6 +92,7 @@ Yazi, Thunderbird, and Dolphin use tiled windows in their special workspaces. bt
 | Super+Z | Noctalia settings |
 | Super+X | Noctalia control center |
 | Alt+Space | Noctalia launcher |
+| Super+Space | Toggle input method |
 | Super+. | Noctalia emoji picker |
 | Super+L | Lock the session |
 | Super+Alt+C | Open the session panel |
@@ -118,7 +108,7 @@ Yazi, Thunderbird, and Dolphin use tiled windows in their special workspaces. bt
 
 ## Shell and portability notes
 
-Fish adds Android SDK, Flutter, `~/.local/bin`, and Pi Agent paths; it uses Starship, zoxide, and eza, aliases `grep` to ripgrep, and adds verbose `mv`, `rm`, and `cp` abbreviations. Review these paths and remove the Android, Flutter, or Pi entries if you do not use them.
+Fish adds `~/.local/bin` to `PATH`, uses Starship, zoxide, and eza, aliases `grep` to ripgrep, and adds verbose `mv`, `rm`, and `cp` abbreviations. Install these tools separately if you use the Fish config.
 
 Hyprland launches apps through `uwsm app --`. If you do not use UWSM, change `launchPrefix` in `config/hypr/config/binds.lua` and the launch strings in `config/hypr/config/scratchpads.lua`. Check that each referenced executable is installed. These configs do not install applications, plugins, or themes.
 

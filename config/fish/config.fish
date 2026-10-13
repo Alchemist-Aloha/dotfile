@@ -1,4 +1,5 @@
-source /usr/share/cachyos-fish-config/cachyos-config.fish
+# Cachyos default
+#source /usr/share/cachyos-fish-config/cachyos-config.fish
 
 # overwrite greeting
 # potentially disabling fastfetch
@@ -6,10 +7,6 @@ function fish_greeting
    # smth smth
 end
 
-export ANDROID_HOME=$HOME/develop/Android/Sdk
-fish_add_path $ANDROID_HOME/cmdline-tools/latest/bin
-fish_add_path $ANDROID_HOME/platform-tools
-fish_add_path $HOME/develop/flutter/bin
 # uv
 fish_add_path "$HOME/.local/bin"
 
@@ -35,9 +32,3 @@ starship init fish | source
 abbr mv 'mv -v'
 abbr rm 'rm -v'
 abbr cp 'cp -v'
-
-# Added by Antigravity CLI installer
-set -gx PATH "$HOME/.local/bin" $PATH
-
-# Pi
-fish_add_path "$HOME/.pi/agent/bin"
